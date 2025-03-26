@@ -1,0 +1,49 @@
+<!-- Contenedor principal del contador con clase para estilos CSS -->
+<div class="counter-container">
+    <!-- Título del contador -->
+    <h1>Contador</h1>
+    
+    <!-- Contenedor del valor actual del contador -->
+    <div class="counter-value">
+      <!-- 
+        Mostramos el valor del contador y aplicamos clases CSS dinámicamente:
+        - 'positive' si el valor es mayor que 0 
+        - 'negative' si el valor es menor que 0
+      -->
+      <span [ngClass]="{'positive': counterValue > 0, 'negative': counterValue < 0}">
+        {{ counterValue }}
+      </span>
+    </div>
+    
+    <!-- Contenedor de los botones de acción -->
+    <div class="buttons">
+      <!-- 
+        Botón para decrementar:
+        - Al hacer clic llama al método decrement()
+        - Se deshabilita cuando loading es true (operación en curso)
+      -->
+      <button (click)="decrement()" [disabled]="loading">-</button>
+      
+      <!-- 
+        Botón para reiniciar:
+        - Al hacer clic llama al método reset()
+        - Se deshabilita durante operaciones
+      -->
+      <button (click)="reset()" [disabled]="loading">Reset</button>
+      
+      <!-- 
+        Botón para incrementar:
+        - Al hacer clic llama al método increment()
+        - Se deshabilita durante operaciones
+      -->
+      <button (click)="increment()" [disabled]="loading">+</button>
+    </div>
+    
+    <!-- 
+      Mensaje de carga - Solo se muestra cuando loading es true
+      La directiva *ngIf controla si este elemento está presente o no en el DOM
+    -->
+    <div *ngIf="loading" class="loading">
+      Cargando...
+    </div>
+  </div>

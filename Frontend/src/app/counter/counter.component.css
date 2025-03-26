@@ -1,0 +1,78 @@
+/* Contenedor principal del contador */
+.counter-container {
+    display: flex;          /* Usamos flexbox para alinear los elementos en columna */
+    flex-direction: column; /* Disposición vertical de los elementos */
+    align-items: center;    /* Centramos horizontalmente los elementos */
+    margin-top: 50px;       /* Espacio superior */
+    font-family: Arial, sans-serif; /* Tipo de letra */
+  }
+  
+  /* Contenedor del valor del contador */
+  .counter-value {
+    font-size: 72px;      /* Tamaño grande para el número */
+    padding: 20px;        /* Espacio interno */
+    border-radius: 8px;   /* Bordes redondeados */
+    margin: 20px 0;       /* Margen vertical */
+    min-width: 150px;     /* Ancho mínimo */
+    text-align: center;   /* Centrado del texto */
+  }
+  
+  /* Clase para valores positivos (color verde) */
+  .positive {
+    color: green; /* Texto verde para valores positivos */
+  }
+  
+  /* Clase para valores negativos (color rojo) */
+  .negative {
+    color: red; /* Texto rojo para valores negativos */
+  }
+  
+  /* Contenedor de los botones */
+  .buttons {
+    display: flex; /* Flexbox para alinear botones en fila */
+    gap: 10px;     /* Espacio entre botones */
+  }
+  
+  /* Estilo base para todos los botones */
+  button {
+    padding: 10px 20px;          /* Espacio interno */
+    font-size: 18px;             /* Tamaño del texto */
+    border-radius: 4px;          /* Bordes redondeados */
+    border: none;                /* Sin borde */
+    cursor: pointer;             /* Cursor tipo mano al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave al cambiar color */
+  }
+  
+  /* Estilo específico para el botón de decrementar (rojo) */
+  button:first-child {
+    background-color: #ff6b6b; /* Rojo */
+    color: white;              /* Texto blanco */
+  }
+  
+  /* Estilo específico para el botón de incrementar (verde azulado) */
+  button:last-child {
+    background-color: #4ecdc4; /* Verde azulado */
+    color: white;              /* Texto blanco */
+  }
+  
+  /* Estilo específico para el botón de reinicio (amarillo) */
+  button:nth-child(2) {
+    background-color: #ffe66d; /* Amarillo */
+  }
+  
+  /* Efecto al pasar el cursor por encima de los botones */
+  button:hover {
+    opacity: 0.9; /* Ligera transparencia al pasar el cursor */
+  }
+  
+  /* Estilo para botones deshabilitados durante carga */
+  button:disabled {
+    opacity: 0.5;         /* Más transparente */
+    cursor: not-allowed;  /* Cursor de prohibido */
+  }
+  
+  /* Estilo para el mensaje de carga */
+  .loading {
+    margin-top: 10px; /* Espacio superior */
+    color: #666;      /* Color gris para el texto */
+  }
